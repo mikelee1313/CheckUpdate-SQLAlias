@@ -193,7 +193,7 @@ function Set-SQLRegKeys() {
                 $e = $_.Exception
                 $line = $_.InvocationInfo.ScriptLineNumber
                 $msg = $e.Message
-                Write-Host –ForegroundColor Red "Caught Exception: $e at $line"
+                Write-Host  "Caught Exception: $e at $line" -ForegroundColor Red
                 Write-Host $msg
                 Write-Host "Something went wrong"
             }      
