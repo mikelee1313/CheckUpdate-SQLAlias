@@ -23,6 +23,7 @@ $servers = Get-Content 'C:\install\servers.txt'
 $sqlalias = "sqlalias"
 
 #Updated SQL Server Instance Name Here:
+#Note a port number may be required IE: "DBMSSOCN,sqlserverafter3,1234"
 $sqlServerAfter = "DBMSSOCN,sqlserverafter3"
 
 #Log Settings
