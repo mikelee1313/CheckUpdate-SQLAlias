@@ -16,25 +16,21 @@ How to run:
 
 3.	Modify the “$sqlServerAfter" to be to new SQL instance name.
 
-4.	Please note, that when using TCP/IP, "DBMSSOCN, will be added to the string in the registry.
+4.	Please note, that when using TCP/IP, "DBMSSOCN, will be added to the string in the registry and a Port number maybe required.
 
 Example:
  
-![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/998855f0-73f1-4560-8b3e-1bd08e232f98)
+![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/484ff481-cbc1-46fa-a4ef-fda03d582861)
 
 
-5.	Run the script from a server with an elevated PowerShell ISE
-
-Example:
- 
-![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/45289701-40fc-44d3-a9c1-814a68b5c145)
+5.	Run the script from a server with an elevated PowerShell ISE or PowerShell.
 
 
 6.	The check option will read the current key across the server list and output to a file in the local use’s Temp location.
 
 Example:
 
- ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/c03b73de-99b4-4d32-b876-0a51c0b8c2e5)
+![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/073be39d-d4a8-42ed-9891-0d2042e8f281)
 
 
 Example:
@@ -44,7 +40,8 @@ Example:
 
 7.	The Set option will change the keys according to the new server names you specified in the inputs:
 
-  ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/3ef590cc-2c37-449e-84ac-b60c31fd151d)
+![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/8abd2e6c-6c6b-4df4-be0e-c6264afdff50)
+
 
 Example:
 
