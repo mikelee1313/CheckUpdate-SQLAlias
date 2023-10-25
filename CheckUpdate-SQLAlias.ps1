@@ -21,7 +21,7 @@ $servers = Get-Content 'C:\install\servers.txt'
 
 # Define the value to set
 #Current SQL Alias here:
-$sqlalias = "sqlalias2"
+$sqlalias = "sqlalias"
 
 #Updated SQL Server Instance Name Here:
 $sqlServerAfter = "DBMSSOCN,sqlserverafter3"
