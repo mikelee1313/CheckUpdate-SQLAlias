@@ -1,5 +1,10 @@
 # CheckUpdate-SQLAlias
-This script will read a list of servers and update the SQL Alias registry keys from within the 32bit and 64bit hives. This is useful when migrating SharePoint servers to a new SQL servers, where the SQL instance will change but the alias will remain the same. 
+This script will read a list of servers and update the SQL Alias registry keys from within the 32bit and 64bit hives. 
+
+Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSSQLServer\Client\ConnectTo
+Computer\HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\MSSQLServer\Client\ConnectTo
+
+This is useful when migrating SharePoint servers to a new SQL servers, where the SQL instance will change but the alias will remain the same. 
 
 How to run:
 
