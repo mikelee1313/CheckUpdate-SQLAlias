@@ -1,5 +1,5 @@
 # CheckorUpdateSQLAlias.ps1
-This script will read a list of servers and update the SQL Alias registry keys from within the 32bit and 64bit hives. 
+This script will read a list of servers and check, update or create new SQL Alias registry keys from within the 32bit and 64bit hives. 
 
 Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSSQLServer\Client\ConnectTo
 Computer\HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\MSSQLServer\Client\ConnectTo
