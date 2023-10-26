@@ -15,6 +15,7 @@ How to run:
    ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/acf7e749-923e-45f7-83ab-6ae6c25175ba)
 
 2. Modify the "$sqlalias" and the "$sqlServer" parameters to match your environment.
+
    Note: These settings can a new entry or a current setting you want to update.
 
 ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/1d1d0fec-2730-4619-9ff9-8401ed201976)
