@@ -53,7 +53,8 @@ function checkkey {
             $key = $Reg32.OpenSubKey("SOFTWARE\Microsoft\MSSQLServer\Client\ConnectTo")
             $val = $key.GetValue($sqlalias)
             $aliasall = $key.GetValueNames()
-
+            
+            #Loop through all values in the "ConnectTo" key in both the 32/64 bit hives and document all entries
             foreach ($alias in $aliasall) {
 
                 $val2 = $key.GetValue($alias)
@@ -146,6 +147,7 @@ function updatekey {
             Write-Host ""
             Write-LogEntry -LogName:$Log -LogEntryText "================================"
             $val = @()
+            #$alias = @()
             
             $key.Close()
  
@@ -166,7 +168,8 @@ function updatekey {
             Write-Host ""
             Write-LogEntry -LogName:$Log -LogEntryText "================================"
             $val = @()
-
+            #$alias = @()
+ 
             $key.Close()
 
         }
