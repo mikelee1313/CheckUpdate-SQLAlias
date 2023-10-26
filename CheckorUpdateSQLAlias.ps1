@@ -19,69 +19,95 @@ Disclaimer: The sample scripts are provided AS IS without warranty
 # Define the list of servers
 $servers = Get-Content 'C:\install\servers.txt'
 
-#Current SQL Alias here:
-$sqlalias = "sqlalias"
+#Enter current SQL or new alias here:
+#IE: "SQLALIAS"
+$sqlalias = "ENTER SQL ALIAS NAME HERE"
 
 #Updated SQL Server Instance Name Here:
-#Note a port number may be required IE: "DBMSSOCN,sqlserverafter3,1234"
-$sqlServerAfter = "DBMSSOCN,sqlserverafter3"
+#Note a port number may be required IE: "DBMSSOCN,sqlserver,1234"
+#Note if the port is dymanic it will look like this: "DBMSSOCN,sqlserver"
+$sqlServer = "DBMSSOCN,sqlserver19newnewnew4"
 
 #Log Settings
 $date = Get-Date -Format yyyy-MM-dd_HH-mm-ss-ms
 $Log = "$env:TEMP\" + $date + '_' + "SQLkeys.csv"
 
-#This is the main function to execute the Set or Check Code
+
+#This is the Check function 
 function checkkey {
     foreach ($server in $servers) {
         try {   
        
             #Open and read key in 32 bit hive
+            Write-Host "======================================"
             Write-Host "Opening 32 BIT Registry on: $server "  -ForegroundColor Green
+            Write-Host "======================================"
+            Write-Host ""
+            
+            Write-LogEntry -LogName:$Log -LogEntryText "===================================="
             Write-LogEntry -LogName:$Log -LogEntryText "Opening 32 BIT Registry on: $server "
+            Write-LogEntry -LogName:$Log -LogEntryText "===================================="
+            Write-Host ""
 
             $Reg32 = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey('LocalMachine', $server)
             $key = $Reg32.OpenSubKey("SOFTWARE\Microsoft\MSSQLServer\Client\ConnectTo")
             $val = $key.GetValue($sqlalias)
-            $alias = $key.GetValueNames()
-      
-            Write-Host "Reading Alias from $key on '$server' "  -ForegroundColor Yellow
-            Write-LogEntry -LogName:$Log -LogEntryText "Reading Alias from $key on '$server' "
+            $aliasall = $key.GetValueNames()
 
-            Write-Host "Current Alias key is '$alias' on Server '$server'" -ForegroundColor Green
-            Write-LogEntry -LogName:$Log -LogEntryText "Current Alias key is '$alias' on Server '$server'"
+            foreach ($alias in $aliasall) {
 
-            Write-Host "Current Alias value is '$val' on Server '$server'" -ForegroundColor Red
-            Write-LogEntry -LogName:$Log -LogEntryText "Current Alias value is '$val' on Server '$server'"
-       
-            Write-LogEntry -LogName:$Log -LogEntryText "================================"
-            Write-Host ""
+                $val2 = $key.GetValue($alias)
+     
+                Write-Host "Reading Alias from $key on '$server' "  -ForegroundColor Yellow
+                Write-LogEntry -LogName:$Log -LogEntryText "Reading Alias from $key on '$server' "
 
+                Write-Host "Current Alias key is '$alias' with $val2 Server '$server'" -ForegroundColor Green
+                Write-LogEntry -LogName:$Log -LogEntryText "Current Alias key is '$alias' with $val2 on Server '$server'"
+            
+                Write-Host "---------------------------------"
+                Write-LogEntry -LogName:$Log -LogEntryText "---------------------------------"
+                Write-Host ""
+            }
+            $val = @()
+            $val2 = @()
+            $aliasall = @()
+            
             $key.Close()
 
-
             #Open and read key in 64 bit hive
-            Write-Host "Opening 64 BIT Registry on: $server "  -ForegroundColor Green 
+            Write-Host "====================================="
+            Write-Host "Opening 64 BIT Registry on: $server "  -ForegroundColor Green
+            Write-Host "====================================="
+            Write-Host ""
+
+            Write-LogEntry -LogName:$Log -LogEntryText "======================================"
             Write-LogEntry -LogName:$Log -LogEntryText "Opening 64 BIT Registry on: $server "
+            Write-LogEntry -LogName:$Log -LogEntryText "======================================"
+            Write-Host ""
              
             $Reg64 = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey('LocalMachine', $server)
             $key = $Reg64.OpenSubKey("SOFTWARE\WOW6432Node\Microsoft\MSSQLServer\Client\ConnectTo")
             $val = $key.GetValue($sqlalias)
-            $alias = $key.GetValueNames()
-       
-            Write-Host "Reading Alias from $key on '$server' "  -ForegroundColor Yellow
-            Write-LogEntry -LogName:$Log -LogEntryText "Reading Alias from $key on '$server' "
+            $aliasall = $key.GetValueNames()
 
-            Write-Host "Current Alias key is '$alias' on Server '$server'" -ForegroundColor Green
-            Write-LogEntry -LogName:$Log -LogEntryText "Current Alias key is '$alias' on Server '$server'"
+            foreach ($alias in $aliasall) {
 
-            Write-Host "Current Alias value is '$val' on Server '$server'" -ForegroundColor Red
-            Write-LogEntry -LogName:$Log -LogEntryText "Current Alias value is '$val' on Server '$server'"
-       
-            Write-Host ""
-            Write-LogEntry -LogName:$Log -LogEntryText "================================"
+                $val2 = $key.GetValue($alias)
+     
+                Write-Host "Reading Alias from $key on '$server' "  -ForegroundColor Yellow
+                Write-LogEntry -LogName:$Log -LogEntryText "Reading Alias from $key on '$server' "
 
+                Write-Host "Current Alias key is '$alias' with $val2 Server '$server'" -ForegroundColor Green
+                Write-LogEntry -LogName:$Log -LogEntryText "Current Alias key is '$alias' with $val2 on Server '$server'"
+            
+                Write-Host "---------------------------------"
+                Write-LogEntry -LogName:$Log -LogEntryText "---------------------------------"
+                Write-Host ""
+            }
+            $val = @()
+            $val2 = @()
+            $aliasall = @()
             $key.Close()
-
         } 
 
         catch {
@@ -97,9 +123,9 @@ function checkkey {
     #Finish and Report
     Write-Host "Export file was saved to: " $Log   -ForegroundColor Green
 }
- 
+
 # Main Set Function
-function setkey {
+function updatekey {
     foreach ($Server in $Servers) {
         try {
  
@@ -108,18 +134,20 @@ function setkey {
             Write-LogEntry -LogName:$Log -LogEntryText "Opening 32 BIT Registry on: $server "
             $Reg32 = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey('LocalMachine', $server)
             $key = $Reg32.OpenSubKey("SOFTWARE\Microsoft\MSSQLServer\Client\ConnectTo", $true)
-            $alias = $key.GetValueNames()
+            $val = $key.GetValue($sqlalias)
  
             #Update Reg key
             Write-Host "Updating Registry $key on $server "  -ForegroundColor Yellow
             Write-LogEntry -LogName:$Log -LogEntryText "Updating Registry $key  on: $server "
-            $key.SetValue($alias, $sqlServerAfter)
-            Write-Host "Updated SQL Alias Reg key on '$server' with '$alias' ($($sqlServerAfter))"  -ForegroundColor Red
-            Write-LogEntry -LogName:$Log -LogEntryText "Updated SQL Alias Reg key on '$server' with '$alias' ($($sqlServerAfter))" 
+            $key.SetValue($sqlalias, $sqlServer)
+            Write-Host "Updated SQL Alias Reg key on '$server' with '$sqlalias' ($($sqlServer))"  -ForegroundColor Red
+            Write-LogEntry -LogName:$Log -LogEntryText "Updated SQL Alias Reg key on '$server' with '$sqlalias' ($($sqlServer))" 
  
             Write-Host ""
             Write-LogEntry -LogName:$Log -LogEntryText "================================"
-
+            $val = @()
+            #$alias = @()
+            
             $key.Close()
  
             #Open and update  key in 64 bit hive
@@ -127,17 +155,19 @@ function setkey {
             Write-LogEntry -LogName:$Log -LogEntryText "Opening 64 BIT Registry on: $server "
             $Reg64 = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey('LocalMachine', $server)
             $key = $Reg64.OpenSubKey("SOFTWARE\WOW6432Node\Microsoft\MSSQLServer\Client\ConnectTo", $true)
-            $alias = $key.GetValueNames()
+            $val = $key.GetValue($sqlalias)
  
             #update Reg key
             Write-Host "Updating $key on $server "  -ForegroundColor Yellow
             Write-LogEntry -LogName:$Log -LogEntryText "Updating Registry $key  on: $server "
-            $key.SetValue($alias, $sqlServerAfter)
-            Write-Host "Updated SQL Alias Reg key on '$server' with '$alias' ($($sqlServerAfter))"  -ForegroundColor Red
-            Write-LogEntry -LogName:$Log -LogEntryText "Updated SQL Alias Reg key on '$server' with '$alias' ($($sqlServerAfter))" 
+            $key.SetValue($sqlalias, $sqlServer)
+            Write-Host "Updated SQL Alias Reg key on '$server' with '$sqlalias' ($($sqlServer))"  -ForegroundColor Red
+            Write-LogEntry -LogName:$Log -LogEntryText "Updated SQL Alias Reg key on '$server' with '$sqlalias' ($($sqlServer))" 
  
             Write-Host ""
             Write-LogEntry -LogName:$Log -LogEntryText "================================"
+            $val = @()
+            #$alias = @()
  
             $key.Close()
 
@@ -154,6 +184,64 @@ function setkey {
     #Finish and Report
     Write-Host "Export file was saved to: " $Log   -ForegroundColor Green
 }
+
+
+# Main Set Function
+function createkey {
+    foreach ($Server in $Servers) {
+        try {
+ 
+            #Open and update  key in 32 bit hive
+            Write-Host "Opening 32 BIT Registry on: $server "  -ForegroundColor Green
+            Write-LogEntry -LogName:$Log -LogEntryText "Opening 32 BIT Registry on: $server "
+            $Reg32 = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey('LocalMachine', $server)
+            $key = $Reg32.OpenSubKey("SOFTWARE\Microsoft\MSSQLServer\Client\ConnectTo", $true)
+     
+ 
+            #Update Reg key
+            Write-Host "Updating Registry $key on $server "  -ForegroundColor Yellow
+            Write-LogEntry -LogName:$Log -LogEntryText "Adding new Alias in Registry $key  on: $server "
+            $key.SetValue($sqlalias, $sqlServer)
+            Write-Host "Added new SQL Alias Reg key on '$server' with '$sqlalias' ($($sqlServer))"  -ForegroundColor Red
+            Write-LogEntry -LogName:$Log -LogEntryText "Updated SQL Alias Reg key on '$server' with '$sqlalias' ($($sqlServer))" 
+ 
+            Write-Host ""
+            Write-LogEntry -LogName:$Log -LogEntryText "================================"
+
+            $key.Close()
+ 
+            #Open and update  key in 64 bit hive
+            Write-Host "Opening 64 BIT Registry on: $server "  -ForegroundColor Green
+            Write-LogEntry -LogName:$Log -LogEntryText "Opening 64 BIT Registry on: $server "
+            $Reg64 = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey('LocalMachine', $server)
+            $key = $Reg64.OpenSubKey("SOFTWARE\WOW6432Node\Microsoft\MSSQLServer\Client\ConnectTo", $true)
+    
+            #update Reg key
+            Write-Host "Updating Registry $key on $server "  -ForegroundColor Yellow
+            Write-LogEntry -LogName:$Log -LogEntryText "Adding new Alias in Registry $key  on: $server "
+            $key.SetValue($sqlalias, $sqlServer)
+            Write-Host "Added new SQL Alias Reg key on '$server' with '$sqlalias' ($($sqlServer))"  -ForegroundColor Red
+            Write-LogEntry -LogName:$Log -LogEntryText "Updated SQL Alias Reg key on '$server' with '$sqlalias' ($($sqlServer))" 
+ 
+            Write-Host ""
+            Write-LogEntry -LogName:$Log -LogEntryText "================================"
+
+            $key.Close()
+
+        }
+        catch {
+            $e = $_.Exception
+            $line = $_.InvocationInfo.ScriptLineNumber
+            $msg = $e.Message
+            Write-Host  "Caught Exception: $e at $line" -ForegroundColor Red
+            Write-Host $msg
+            Write-Host "Something went wrong"
+        }      
+    }
+    #Finish and Report
+    Write-Host "Export file was saved to: " $Log   -ForegroundColor Green
+}
+
 
 #This is the logging function
 Function Write-LogEntry {
@@ -172,14 +260,20 @@ Function Write-LogEntry {
 #Start Function
 #Read Prompt to Check or Set
 function CheckorUpdateSQLAlias {
-    $run = Read-Host "Do you want to Check to Set? Type: (Check/Set)"
-    if ($run -eq 'Set') {
-        setkey
-    }
+    $run = Read-Host "Do you want to Check to Update or Create? Type: (Check/Update/Create)"
 
     if ($run -eq 'Check') {
         checkkey
     }
+
+    if ($run -eq 'Update') {
+        updatekey
+    }
+
+    if ($run -eq 'Create') {
+        Createkey
+    }
+
 }
 
 CheckorUpdateSQLAlias
