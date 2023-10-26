@@ -146,7 +146,6 @@ function updatekey {
             Write-Host ""
             Write-LogEntry -LogName:$Log -LogEntryText "================================"
             $val = @()
-            #$alias = @()
             
             $key.Close()
  
@@ -167,8 +166,7 @@ function updatekey {
             Write-Host ""
             Write-LogEntry -LogName:$Log -LogEntryText "================================"
             $val = @()
-            #$alias = @()
- 
+
             $key.Close()
 
         }
