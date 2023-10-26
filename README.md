@@ -4,7 +4,7 @@ This script will read a list of servers and check, update or create new SQL Alia
 Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSSQLServer\Client\ConnectTo
 Computer\HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\MSSQLServer\Client\ConnectTo
 
-This is useful when migrating SharePoint servers to a new SQL servers, where the SQL instance will change but the alias will remain the same. 
+This is useful when migrating SharePoint servers to a new SQL server, where the SQL instance will change but the alias will remain the same. 
 
 How to run:
 
@@ -44,7 +44,7 @@ How to run:
 
 ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/72811c3c-124f-425c-9e78-3728dfcae884)
 
-7. The "New" option will add a new entry in both the 32bit and 64bit hives if one does not exsist.
+7. The "New" option will add a new entry in both the 32bit and 64bit hives if one does not exists.
 
    Example:
 
