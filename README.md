@@ -8,44 +8,49 @@ This is useful when migrating SharePoint servers to a new SQL servers, where the
 
 How to run:
 
-1.	Modify the "$sqlalias" and the "$sqlServerAfter" parameters to match your environment.
-
-2.	  "$sqlalias" should be your current SQL Alias as show in CLICONFG.
-
- ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/418bcaab-efbb-42f8-acdb-e5923b6f703b)
-
-3.	Modify the “$sqlServerAfter" to be to new SQL instance name.
-
-4.	Please note, that when using TCP/IP, "DBMSSOCN, will be added to the string in the registry and a Port number maybe required.
-
-Example:
- 
-![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/484ff481-cbc1-46fa-a4ef-fda03d582861)
+1. Create a list of servers in the "Servers.txt" file.
+   Note: Make sure your path is correct
 
 
-5.	Run the script from a server with an elevated PowerShell ISE or PowerShell.
+   ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/acf7e749-923e-45f7-83ab-6ae6c25175ba)
 
+2. Modify the "$sqlalias" and the "$sqlServer" parameters to match your environment.
+   Note: These settings can a new entry or a current setting you want to update.
 
-6.	The check option will read the current key across the server list and output to a file in the local use’s Temp location.
+![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/1d1d0fec-2730-4619-9ff9-8401ed201976)
 
-Example:
+Please note: When using TCP/IP, "DBMSSOCN, will be added to the string in the registry and a Port number maybe required.
 
-![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/073be39d-d4a8-42ed-9891-0d2042e8f281)
+3. Run the script from a server with an elevated PowerShell ISE or PowerShell.
 
+ ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/814154d8-5d11-4f29-a6cf-ae857e20d5de)
+
+5. The "Check" option will read the current key(s) across your list of servers and output all alias's and the configurations to a file in the Temp location.
 
 Example:
 
- ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/65409117-0936-419e-a5c2-e092dcc1fa5f)
+![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/d9ecd0fc-682d-41b8-aeb5-b94c6549d413)
 
+![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/86a00bf3-2808-4d3a-b749-b761d9a18e48)
 
-7.	The Set option will change the keys according to the new server names you specified in the inputs:
+![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/5fb43c53-5742-4fb0-8fb0-3ab5d28c9b1e)
 
-![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/8abd2e6c-6c6b-4df4-be0e-c6264afdff50)
+6. The "Update" option will change the keys according to the names you specified in the inputs:
 
+![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/70f1ba79-426e-4c23-9baa-1b3ae32ace42)
 
 Example:
 
+![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/72811c3c-124f-425c-9e78-3728dfcae884)
 
-![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/1e192d47-3df5-4259-a16b-2813f9d8c34c)
+7. The "New" option will add a new entry in both the 32bit and 64bit hives if one does not exsist.
+
+Example:
+
+![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/f4921c99-160f-46d2-a167-bf1bf28a64ce)
+
+![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/ad3698c2-ceb3-4761-90cb-e12c0e145f0c)
 
 
+
+   
