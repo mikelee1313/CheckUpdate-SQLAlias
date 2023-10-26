@@ -26,7 +26,7 @@ $sqlalias = "ENTER SQL ALIAS NAME HERE"
 #Updated SQL Server Instance Name Here:
 #Note a port number may be required IE: "DBMSSOCN,sqlserver,1234"
 #Note if the port is dymanic it will look like this: "DBMSSOCN,sqlserver"
-$sqlServer = "DBMSSOCN,sqlserver19newnewnew4"
+$sqlServer = "ENTER YOUR DB CONNECTION STRING HERE"
 
 #Log Settings
 $date = Get-Date -Format yyyy-MM-dd_HH-mm-ss-ms
