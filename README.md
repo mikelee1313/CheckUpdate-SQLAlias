@@ -10,14 +10,13 @@ How to run:
 
 1. Create a list of servers in the "Servers.txt" file.
 
-   Note: Make sure your path is correct
+Note: Make sure your path is correct
 
-
-   ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/acf7e749-923e-45f7-83ab-6ae6c25175ba)
+![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/acf7e749-923e-45f7-83ab-6ae6c25175ba)
 
 3. Modify the "$sqlalias" and the "$sqlServer" parameters to match your environment.
 
-   Note: These settings can a new entry or a current setting you want to update.
+Note: These settings can a new entry or a current setting you want to update.
 
 ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/1d1d0fec-2730-4619-9ff9-8401ed201976)
 
@@ -25,7 +24,7 @@ Please note: When using TCP/IP, "DBMSSOCN, will be added to the string in the re
 
 3. Run the script from a server with an elevated PowerShell ISE or PowerShell.
 
- ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/814154d8-5d11-4f29-a6cf-ae857e20d5de)
+![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/814154d8-5d11-4f29-a6cf-ae857e20d5de)
 
 5. The "Check" option will read the current key(s) across your list of servers and output all alias's and the configurations to a file in the Temp location.
 
