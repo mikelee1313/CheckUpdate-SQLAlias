@@ -26,17 +26,17 @@ How to run:
 
    ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/814154d8-5d11-4f29-a6cf-ae857e20d5de)
 
-5. The "Check" option will read the current key(s) across your list of servers and output all alias's and the configurations to a file in the Temp location.
+4. The "Check" option will read the current key(s) across your list of servers and output all alias's and the configurations to a file in the Temp location.
 
    Example:
 
-   ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/d9ecd0fc-682d-41b8-aeb5-b94c6549d413)
+   ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/b435852c-41a6-4af5-9e07-3375700788d0)
 
    ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/86a00bf3-2808-4d3a-b749-b761d9a18e48)
 
-   ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/5fb43c53-5742-4fb0-8fb0-3ab5d28c9b1e)
+   ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/964318b0-188d-4e92-96aa-1b931a15d0e3)
 
-6. The "Update" option will change the keys according to the names you specified in the inputs:
+5. The "Update" option will change the keys according to the names you specified in the inputs:
 
    ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/70f1ba79-426e-4c23-9baa-1b3ae32ace42)
 
