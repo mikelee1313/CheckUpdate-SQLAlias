@@ -47,7 +47,7 @@ How to run:
 
 
 
-7. The "**Create**" option will add a new entry in both the 32bit and 64bit hives if one does not exists.
+6. The "**Create**" option will add a new entry in both the 32bit and 64bit hives if one does not exists.
 
    Example:
 
@@ -56,7 +56,7 @@ How to run:
 
    ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/6f597aef-d76b-40b5-9efc-bdcf18f5e69d)
 
-8. The "**DeleteAll**" option will delete all values in both the 32bit and 64bit "Connect to" keys.
+7. The "**DeleteAll**" option will delete all values in both the 32bit and 64bit "Connect to" keys.
 
 
    Note: Use this option with caution as it will delete all current SQL Alias's and could impact your service if this action is not totally understood.
