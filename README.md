@@ -58,7 +58,7 @@ How to run:
 
 8. The "**Delete**" option will delete all values in both the 32bit and 64bit "Connect to" keys.
 
-   Note: Use this option with caution as it will delete all current SQL Alias's and could impact you service if this action is not totally understood.
+   Note: Use this option with caution as it will delete all current SQL Alias's and could impact your service if this action is not totally understood.
 
    
 
