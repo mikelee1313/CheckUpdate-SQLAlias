@@ -56,9 +56,18 @@ How to run:
 
    ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/6f597aef-d76b-40b5-9efc-bdcf18f5e69d)
 
-8. The "**Delete**" option will delete all values in both the 32bit and 64bit "Connect to" keys.
+8. The "**DeleteAll**" option will delete all values in both the 32bit and 64bit "Connect to" keys.
 
    Note: Use this option with caution as it will delete all current SQL Alias's and could impact your service if this action is not totally understood.
+
+   Example:
+   ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/e2058aea-7078-4502-a6fb-075673e8ecd1)
+
+   ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/0b078d4d-928c-466b-a404-0612cb6bb20a)
+
+
+   
+
 
    
 
