@@ -32,7 +32,7 @@ How to run:
 
    ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/b435852c-41a6-4af5-9e07-3375700788d0)
 
-   ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/86a00bf3-2808-4d3a-b749-b761d9a18e48)
+   ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/8642d5bb-f592-40bd-b871-0e50915fac57)
 
    ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/964318b0-188d-4e92-96aa-1b931a15d0e3)
 
