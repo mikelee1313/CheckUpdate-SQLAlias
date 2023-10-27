@@ -64,10 +64,11 @@ How to run:
 
    Example:
    
-   ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/e2058aea-7078-4502-a6fb-075673e8ecd1)
-   
+   ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/0d5f15fc-d41c-4be7-b242-33850584e0b9)
 
-   ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/0b078d4d-928c-466b-a404-0612cb6bb20a)
+
+   ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/0dc44a4d-f714-4e12-ad29-658d04c5829c)
+
 
 
    
