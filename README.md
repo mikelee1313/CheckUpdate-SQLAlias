@@ -26,7 +26,7 @@ How to run:
 
    ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/814154d8-5d11-4f29-a6cf-ae857e20d5de)
 
-4. The "Check" option will read the current key(s) across your list of servers and output all alias's and the configurations to a file in the Temp location.
+4. The "**Check**" option will read the current key(s) across your list of servers and output all alias's and the configurations to a file in the Temp location.
 
    Example:
 
@@ -36,22 +36,31 @@ How to run:
 
    ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/964318b0-188d-4e92-96aa-1b931a15d0e3)
 
-5. The "Update" option will change the keys according to the names you specified in the inputs:
+5. The "**Update**" option will change the keys according to the names you specified in the inputs:
 
-   ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/70f1ba79-426e-4c23-9baa-1b3ae32ace42)
+   ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/f40d95cd-6415-4b95-aa0f-8cd5e0b66a28)
 
-   Example:
-
-![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/72811c3c-124f-425c-9e78-3728dfcae884)
-
-7. The "New" option will add a new entry in both the 32bit and 64bit hives if one does not exists.
 
    Example:
 
-   ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/f4921c99-160f-46d2-a167-bf1bf28a64ce)
+   ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/f1116b18-54b9-4325-aef3-e69a70cd0e19)
 
-   ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/ad3698c2-ceb3-4761-90cb-e12c0e145f0c)
 
+
+7. The "**Create**" option will add a new entry in both the 32bit and 64bit hives if one does not exists.
+
+   Example:
+
+   ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/de5ebc0e-221b-4dc2-a030-713910c1839a)
+
+
+   ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/6f597aef-d76b-40b5-9efc-bdcf18f5e69d)
+
+8. The "**Delete**" option will delete all values in both the 32bit and 64bit "Connect to" keys.
+
+   Note: Use this option with caution as it will delete all current SQL Alias's and could impact you service if this action is not totally understood.
+
+   
 
 
    
