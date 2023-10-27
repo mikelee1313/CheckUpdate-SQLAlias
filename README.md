@@ -1,5 +1,5 @@
 # CheckorUpdateSQLAlias.ps1
-This script will read a list of servers and check, update or create new SQL Alias registry keys from within the 32bit and 64bit hives. 
+This script will read a list of servers and check, update, create, delete or "delete all" new SQL Alias(s) registry keys from within the 32bit and 64bit hives. 
 
 Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSSQLServer\Client\ConnectTo
 Computer\HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\MSSQLServer\Client\ConnectTo
@@ -56,7 +56,19 @@ How to run:
 
    ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/6f597aef-d76b-40b5-9efc-bdcf18f5e69d)
 
-7. The "**DeleteAll**" option will delete all values in both the 32bit and 64bit "Connect to" keys.
+
+7. The "**Delete**" option will delete the specified value in both the 32bit and 64bit "Connect to" keys.
+
+   Example:
+
+   ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/b249823a-94b1-4e00-aaf5-8982f91284ed)
+
+
+   ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/94c5bf69-dd3c-4525-b418-4f14ed6e5cc1)
+
+   
+
+9. The "**DeleteAll**" option will delete all values in both the 32bit and 64bit "Connect to" keys.
 
 
    Note: Use this option with caution as it will delete all current SQL Alias's and could impact your service if this action is not totally understood.
