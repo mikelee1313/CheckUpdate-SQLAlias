@@ -24,7 +24,7 @@ How to run:
 
 3. Run the script from a server with an elevated PowerShell ISE or PowerShell.
 
-   ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/814154d8-5d11-4f29-a6cf-ae857e20d5de)
+   ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/d4777736-cdc1-4bcf-9894-1e263bb964f4)
 
 4. The "**Check**" option will read the current key(s) across your list of servers and output all alias's and the configurations to a file in the Temp location.
 
