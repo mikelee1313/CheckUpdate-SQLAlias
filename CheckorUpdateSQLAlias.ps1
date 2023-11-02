@@ -83,7 +83,7 @@ function checkkey {
 
              
             $Reg64 = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey('LocalMachine', $server)
-            $key = $Reg32.OpenSubKey("SOFTWARE\Microsoft\MSSQLServer\Client\ConnectTo")
+            $key = $Reg32.OpenSubKey("SOFTWARE\WOW6432Node\Microsoft\MSSQLServer\Client\ConnectTo")
             $aliasall = $key.GetValueNames()
             
             #Loop through all values in the 64 bit "ConnectTo" key and document all entries
