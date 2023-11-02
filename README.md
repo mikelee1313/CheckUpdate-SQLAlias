@@ -31,7 +31,7 @@ How to run:
 
    Example:
 
-   ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/b435852c-41a6-4af5-9e07-3375700788d0)
+   ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/94a62c42-70e3-49a4-85a5-e41c0f441f8b)
 
    ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/8642d5bb-f592-40bd-b871-0e50915fac57)
 
