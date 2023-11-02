@@ -40,16 +40,16 @@ How to run:
 
 5. The "**Update**" option will change the keys according to the names you specified in the inputs:
 
+   Example:
+
    ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/f40d95cd-6415-4b95-aa0f-8cd5e0b66a28)
 
-
-   Example:
 
    ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/f1116b18-54b9-4325-aef3-e69a70cd0e19)
 
 
 
-6. The "**Create**" option will add a new entry in both the 32bit and 64bit hives if one does not exists.
+7. The "**Create**" option will add a new entry in both the 32bit and 64bit hives if one does not exists.
 
    Example:
 
@@ -59,7 +59,7 @@ How to run:
    ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/6f597aef-d76b-40b5-9efc-bdcf18f5e69d)
 
 
-7. The "**Delete**" option will delete the specified value in both the 32bit and 64bit "Connect to" keys.
+8. The "**Delete**" option will delete the specified value in both the 32bit and 64bit "Connect to" keys.
 
    Example:
 
