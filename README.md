@@ -35,7 +35,8 @@ How to run:
 
    ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/4b0d6506-90c2-4cf8-a201-cc91078f6740)
 
-   ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/964318b0-188d-4e92-96aa-1b931a15d0e3)
+   ![image](https://github.com/mikelee1313/CheckUpdate-SQLAlias/assets/62190454/f1ab6d62-a77f-485c-86a4-d1be797d7079)
+
 
 5. The "**Update**" option will change the keys according to the names you specified in the inputs:
 
